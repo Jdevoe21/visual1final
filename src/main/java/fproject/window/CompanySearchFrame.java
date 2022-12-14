@@ -109,10 +109,7 @@ public class CompanySearchFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_lstResultsKeyPressed
 
     private void jtfSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfSearchKeyPressed
-        Runnable target = new Runnable(){
-            @Override
-            public void run(){
-                String q = jtfSearch.getText();
+        String q = jtfSearch.getText();
                 if(!q.equals("")){
                     dlm.clear();
                     Company[] responses = api.query(q);
@@ -120,10 +117,6 @@ public class CompanySearchFrame extends javax.swing.JFrame {
                         dlm.addElement(res);
                     }
                 }
-            }
-        };
-        searchWorker = new Thread(target);
-        searchWorker.start();
     }//GEN-LAST:event_jtfSearchKeyPressed
 
 
