@@ -50,7 +50,7 @@ public class Company implements Serializable{
     
     public void navigate(){
         try {
-            Desktop.getDesktop().browse(new URI(logo));
+            Desktop.getDesktop().browse(new URI("https://" + this.domain));
         } catch (URISyntaxException | IOException ex) {
             Logger.getLogger(Company.class.getName()).log(Level.SEVERE, null, ex);
         }

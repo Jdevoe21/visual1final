@@ -21,6 +21,10 @@ public class Account implements Serializable{
         company = comp;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
     public String getUsername() {
         return username;
     }
