@@ -38,7 +38,7 @@ public class Account implements Serializable{
     }
     
     public Object[] getRow(){
-        Object[] row = {company.toString(), username, password};
+        Object[] row = {company.getIcon(), company.getName(), username, password};
         return row;
     }
 }

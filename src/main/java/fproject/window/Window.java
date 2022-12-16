@@ -4,7 +4,6 @@
  */
 package fproject.window;
 
-import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,6 +13,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Jack
  */
 public class Window extends javax.swing.JFrame {
-    private final static String[] columnHeaders = {"Website", "Username", "Password"};
+    private final static String[] columnHeaders = {" ", "Website", "Username", "Password"};
     private DefaultTableModel accountsTableModel;
     private ArrayList<Account> accounts;
     private CompanyAPI api;
@@ -30,26 +30,29 @@ public class Window extends javax.swing.JFrame {
     /**
      * Creates new form Window
      */
-    public Window() {
-        api = new CompanyAPI();
-        accountsTableModel = new DefaultTableModel(null, columnHeaders){
+    
+    private static DefaultTableModel getNewDTM(){
+        return new DefaultTableModel(null, columnHeaders){
             @Override
             public boolean isCellEditable(int row, int column){
                 return false;
             }
+            @Override
+            public Class getColumnClass(int columnIndex){
+                return (columnIndex == 0)? ImageIcon.class: super.getColumnClass(columnIndex);
+            }
         };
+    }
+    public Window() {     
+        api = new CompanyAPI();
+        accountsTableModel = getNewDTM();
         accounts = new ArrayList<>();
         initComponents();
         loadAccounts();
     }
     
     private void update(){
-        accountsTableModel = new DefaultTableModel(null, columnHeaders){
-            @Override
-            public boolean isCellEditable(int row, int column){
-                return false;
-            }
-        };
+        accountsTableModel = getNewDTM();
         for(Account a:accounts){
             accountsTableModel.addRow(a.getRow());
         }
