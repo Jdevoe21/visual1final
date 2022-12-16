@@ -113,30 +113,14 @@ public class Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextSearchBar = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         accTable = new javax.swing.JTable();
-        cboxSort = new javax.swing.JComboBox<>();
         btnAdd = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jTextSearchBar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextSearchBarActionPerformed(evt);
-            }
-        });
-
-        btnSearch.setText("Search");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
 
         btnEdit.setText("Edit Account");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -147,13 +131,6 @@ public class Window extends javax.swing.JFrame {
 
         accTable.setModel(accountsTableModel);
         jScrollPane2.setViewportView(accTable);
-
-        cboxSort.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oldest to Newest" }));
-        cboxSort.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboxSortActionPerformed(evt);
-            }
-        });
 
         btnAdd.setText("Add Account");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -185,12 +162,6 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboxSort, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnDelete)
@@ -204,12 +175,7 @@ public class Window extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch)
-                    .addComponent(jTextSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboxSort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEdit)
@@ -221,14 +187,6 @@ public class Window extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-  
-    }//GEN-LAST:event_btnSearchActionPerformed
-
-    private void jTextSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextSearchBarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextSearchBarActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         int i = accTable.getSelectedRow();
@@ -243,10 +201,6 @@ public class Window extends javax.swing.JFrame {
         a.setPassword(newPWord);
         update();     
     }//GEN-LAST:event_btnEditActionPerformed
-
-    private void cboxSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxSortActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboxSortActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         new CompanySearchFrame(this).setVisible(true);
@@ -307,10 +261,7 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
-    private javax.swing.JButton btnSearch;
-    private javax.swing.JComboBox<String> cboxSort;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextSearchBar;
     // End of variables declaration//GEN-END:variables
 }
