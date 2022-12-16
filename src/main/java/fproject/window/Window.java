@@ -57,6 +57,8 @@ public class Window extends javax.swing.JFrame {
             accountsTableModel.addRow(a.getRow());
         }
         accTable.setModel(accountsTableModel);
+        accTable.getColumnModel().getColumn(0).setMaxWidth(40);
+        accTable.setRowHeight(40);
     }
     
     public void saveAccounts(){
@@ -70,7 +72,7 @@ public class Window extends javax.swing.JFrame {
         catch(FileNotFoundException e){
             
         } catch (IOException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
     }
     public void loadAccounts(){
@@ -122,6 +124,7 @@ public class Window extends javax.swing.JFrame {
         btnVisit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Account Safe");
 
         btnEdit.setText("Edit Account");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {

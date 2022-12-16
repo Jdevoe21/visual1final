@@ -35,9 +35,9 @@ public class CompanyAPI {
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             return gson.fromJson(in, Company[].class);
         } catch (MalformedURLException ex) {
-            Logger.getLogger(CompanyAPI.class.getName()).log(Level.SEVERE, null, ex);
+            
         } catch (IOException ex) {
-            Logger.getLogger(CompanyAPI.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         return null;
     }

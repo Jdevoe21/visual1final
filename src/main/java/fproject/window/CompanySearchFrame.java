@@ -38,6 +38,7 @@ public class CompanySearchFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Search Company");
 
         jtfSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +128,6 @@ public class CompanySearchFrame extends javax.swing.JFrame {
     /*
     private javax.swing.JList<String> lstResults;
     */
-    private javax.swing.JList<Company> lstResults;
+    private javax.swing.JList<fproject.window.Company> lstResults;
     // End of variables declaration//GEN-END:variables
 }

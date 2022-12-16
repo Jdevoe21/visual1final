@@ -47,7 +47,7 @@ public class Login extends javax.swing.JFrame {
         catch(FileNotFoundException e){
             
         } catch (IOException ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
     }
     public void loadUser(){
@@ -61,7 +61,7 @@ public class Login extends javax.swing.JFrame {
         } catch (IOException ex) {
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            
         } 
     }
     /**
@@ -79,6 +79,7 @@ public class Login extends javax.swing.JFrame {
         lblerror = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Log in/Sign up");
 
         btnlogin.setText("Log in");
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
@@ -174,13 +175,13 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+           
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            
         }
         //</editor-fold>
 

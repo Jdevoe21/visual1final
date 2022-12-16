@@ -6,6 +6,7 @@ package fproject.window;
 
 import java.awt.Desktop;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.MalformedURLException;
@@ -22,7 +23,7 @@ import javax.swing.ImageIcon;
  * @author Jack
  */
 public class Company implements Serializable{
-    private static int dim = 20;
+    private static int dim = 40;
     String name;
     String domain;
     String logo;
@@ -41,9 +42,9 @@ public class Company implements Serializable{
             Image scaled = img.getScaledInstance(dim, dim, Image.SCALE_SMOOTH);
             return new ImageIcon(scaled);
         } catch (MalformedURLException ex) {
-            Logger.getLogger(Company.class.getName()).log(Level.SEVERE, null, ex);
+            
         } catch (IOException ex) {
-            Logger.getLogger(Company.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         return null;
     }
@@ -52,7 +53,7 @@ public class Company implements Serializable{
         try {
             Desktop.getDesktop().browse(new URI("https://" + this.domain));
         } catch (URISyntaxException | IOException ex) {
-            Logger.getLogger(Company.class.getName()).log(Level.SEVERE, null, ex);
+           
         }
     }
 }
